@@ -33,7 +33,7 @@ class MainActivity2 : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycleView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        colorAdapter = ColorAdapter(colors,
+        colorAdapter = ColorAdapter(this,colors,
             onColorSelected = { color ->
                 // Handle color selection
             },
