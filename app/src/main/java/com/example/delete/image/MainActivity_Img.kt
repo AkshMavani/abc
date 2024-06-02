@@ -58,7 +58,7 @@ class MainActivity_Img : AppCompatActivity() {
         arr.add(Model_String("7hlo world i m looking fo a job in android developer"))
         arr.add(Model_String("8hlo world i m looking fo a job in android developer"))
         arr.add(Model_String("9hlo world i m looking fo a job in android developer"))
-        val adapter=MyAdapter(arr)
+        val adapter=MyAdapter(arr,this)
         rc.layoutManager=LinearLayoutManager(this)
         rc.adapter=adapter
     }

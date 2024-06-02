@@ -1,13 +1,17 @@
 package com.example.delete.image
 
-import android.annotation.SuppressLint
-import android.graphics.ColorSpace.Model
+
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delete.R
+
 
 //class Custom_Adapter1(private val mList: List<Model_String>) : RecyclerView.Adapter<Custom_Adapter1.ViewHolder>() {
 //
@@ -36,12 +40,13 @@ import com.example.delete.R
 //
 //    }
 //}
-class MyAdapter(private val items: List<Model_String>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(private val items: List<Model_String>,var context: Context) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     private var isSingleItemVisible = true
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.txtView1)
+        val cl: ConstraintLayout = itemView.findViewById(R.id.cl)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -51,15 +56,17 @@ class MyAdapter(private val items: List<Model_String>) : RecyclerView.Adapter<My
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        val itemViewModel = items[position]
-        holder.textView.text=items[position].data
-        holder.itemView.visibility = if (isSingleItemVisible && position != 0) View.GONE else View.VISIBLE
-
-        holder.itemView.setOnClickListener {
-            if (isSingleItemVisible && position == 0) {
-                isSingleItemVisible = false
-                notifyDataSetChanged()
-            }
-        }
+        val aniSlide: Animation = AnimationUtils.loadAnimation(context, R.anim.slide_down)
+            holder.cl.startAnimation(aniSlide)
+            holder.textView.text=items[position].data
+//        holder.itemView.visibility = if (isSingleItemVisible && position != 0) View.GONE else View.VISIBLE
+//
+//        holder.itemView.setOnClickListener {
+//            if (isSingleItemVisible && position == 0) {
+//                isSingleItemVisible = false
+//                notifyDataSetChanged()
+//            }
+//        }
     }
 
     override fun getItemCount(): Int {
