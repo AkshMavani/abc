@@ -1,6 +1,7 @@
 package com.example.delete.image
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -54,10 +55,9 @@ class MyAdapter(private val items: List<Model_String>,var context: Context) : Re
         return ViewHolder(view)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        val itemViewModel = items[position]
-        val aniSlide: Animation = AnimationUtils.loadAnimation(context, R.anim.slide_down)
-            holder.cl.startAnimation(aniSlide)
             holder.textView.text=items[position].data
 //        holder.itemView.visibility = if (isSingleItemVisible && position != 0) View.GONE else View.VISIBLE
 //

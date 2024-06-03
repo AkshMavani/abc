@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main3)
 //        val myIntent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
 //        startActivity(myIntent)
+
         val intent=Intent(this,MyForegroundService::class.java)
         startService(intent)
         val btn:Button=findViewById(R.id.button2)

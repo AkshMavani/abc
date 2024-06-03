@@ -12,6 +12,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.example.delete.R
 
 
@@ -30,10 +33,11 @@ class Window(
             mParams = WindowManager.LayoutParams( // Shrink the window to wrap the content rather
                 // than filling the screen
                 WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.MATCH_PARENT,  // Display it on top of other application windows
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,  // Don't let it grab the input focus
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,  // Make the underlying application window visible
-                // through any transparent parts
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 PixelFormat.TRANSLUCENT
             )
         }
@@ -51,6 +55,7 @@ class Window(
     }
 
     fun open() {
+
         try {
             // check if the view is already
             // inflated or present in the window
@@ -84,5 +89,6 @@ class Window(
             Log.d("Error2", e.toString())
         }
     }
+
 
 }
