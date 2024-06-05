@@ -3,11 +3,13 @@ package com.example.delete.image
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -41,12 +43,12 @@ import com.example.delete.R
 //
 //    }
 //}
-class MyAdapter(private val items: List<Model_String>,var context: Context) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(private val items: List<Int>,var context: Context) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     private var isSingleItemVisible = true
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.txtView1)
+        val textView: ImageView = itemView.findViewById(R.id.imageView_layout)
         val cl: ConstraintLayout = itemView.findViewById(R.id.cl)
     }
 
@@ -58,7 +60,12 @@ class MyAdapter(private val items: List<Model_String>,var context: Context) : Re
     @SuppressLint("SuspiciousIndentation")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        val itemViewModel = items[position]
-            holder.textView.text=items[position].data
+        holder.textView.setImageResource(itemViewModel)
+        holder.itemView.setOnClickListener {
+            val intent=Intent(context,MainActivity2::class.java)
+            intent.putExtra("img",itemViewModel)
+            context.startActivity(intent)
+        }
 //        holder.itemView.visibility = if (isSingleItemVisible && position != 0) View.GONE else View.VISIBLE
 //
 //        holder.itemView.setOnClickListener {
