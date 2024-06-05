@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -25,8 +26,16 @@ class MainActivity3 : AppCompatActivity() {
         val one=findViewById<TextView>(R.id.ans_one)
         val two=findViewById<TextView>(R.id.ans_two)
         val three=findViewById<TextView>(R.id.ans_three)
+        val four=findViewById<TextView>(R.id.ans_four)
+        val five=findViewById<TextView>(R.id.ans_five)
+        val six=findViewById<TextView>(R.id.ans_six)
+        val seven=findViewById<TextView>(R.id.ans_seven)
+        val eight=findViewById<TextView>(R.id.ans_eight)
+        val nine=findViewById<TextView>(R.id.ans_none)
+
+
         val layout=findViewById<ConstraintLayout>(R.id.layout)
-        val zoomOutAnimation0 = AnimationUtils.loadAnimation(this, R.anim.anim14)
+            val zoomOutAnimation0 = AnimationUtils.loadAnimation(this, R.anim.anim14)
         layout.startAnimation(zoomOutAnimation0)
         img.setOnClickListener {
             val zoomOutAnimation1 = AnimationUtils.loadAnimation(this, R.anim.anim13)
@@ -36,15 +45,19 @@ class MainActivity3 : AppCompatActivity() {
             val zoomOutAnimation = AnimationUtils.loadAnimation(this, R.anim.anim12)
             zoomOutAnimation.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation) {
-                    Log.e("TAG", "onAnimationStart: ", )
+                    Handler().postDelayed(Runnable {
+                        val intent=Intent(this@MainActivity3,MainActivity2::class.java)
+                    startActivity(intent)
+                    },1200 )
                 }
 
                 override fun onAnimationEnd(animation: Animation) {
 
-                    Toast.makeText(this@MainActivity3, "Animation Completed", Toast.LENGTH_SHORT).show()
-                    val intent=Intent(this@MainActivity3,MainActivity2::class.java)
-                    startActivity(intent)
-                    finish()
+//                    val intent=Intent(this@MainActivity3,MainActivity2::class.java)
+//                    startActivity(intent)
+//                    finish()
+
+
                 }
 
                 override fun onAnimationRepeat(animation: Animation) {
@@ -52,10 +65,17 @@ class MainActivity3 : AppCompatActivity() {
                 }
             })
 
-          //  card.startAnimation(zoomOutAnimation)
-                two.startAnimation(zoomOutAnimation)
-                one.startAnimation(zoomOutAnimation)
-                three.startAnimation(zoomOutAnimation)
+           // card.startAnimation(zoomOutAnimation)
+            one.startAnimation(zoomOutAnimation)
+            two.startAnimation(zoomOutAnimation)
+            three.startAnimation(zoomOutAnimation)
+            four.startAnimation(zoomOutAnimation)
+            five.startAnimation(zoomOutAnimation)
+             six.startAnimation(zoomOutAnimation)
+            seven.startAnimation(zoomOutAnimation)
+            eight.startAnimation(zoomOutAnimation)
+            nine.startAnimation(zoomOutAnimation)
+
             }
         }
     }

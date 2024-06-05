@@ -97,7 +97,7 @@ class DBHandler(context: Context?) : SQLiteOpenHelper(context, DB_NAME, null, DB
         private const val DB_NAME = "coursedb"
 
         // below int is our database version
-        private const val DB_VERSION = 2
+        private const val DB_VERSION = 3
 
         // below variable is for our table name.
         private const val TABLE_NAME = "mycourses"
