@@ -3,11 +3,18 @@ package com.example.delete.image
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlarmManager
+import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -27,6 +34,7 @@ class MainActivity_cal : AppCompatActivity() {
         } else {
             getSystemNextAlarmDetails(this)
         }
+
     }
     @SuppressLint("SimpleDateFormat", "ObsoleteSdkInt")
     fun getSystemNextAlarmDetails(context: Context) {
@@ -60,4 +68,7 @@ class MainActivity_cal : AppCompatActivity() {
             }
         }
     }
+
+
+
 }
