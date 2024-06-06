@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".image.MainActivity_cal">
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="24sp"
+        android:text="Settings.ACTION_MANAGE_OVERLAY_PERMISSION"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:text="The permission  is used to request permission for an app to draw over other apps. This is often necessary for applications that need to display content on top of other applications.this permission is reqired from display lock screen"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="24sp"
+        android:layout_marginTop="32sp"
+        android:text="android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:text="ndroid.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS intent to redirect the user to the Notification Access settings page. This page allows users to grant your app permission to access notifications from other apps."
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="22sp"
+        android:layout_marginTop="32sp"
+        android:text="Manifest.permission.READ_CALENDAR
+    Manifest.permission.WRITE_CALENDAR"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:text="The Manifest.permission.READ_CALENDAR permission in Android allows your app to read the user's calendar data. This permission is required if your app needs to access calendar events and details."
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="gallery permission "
+        android:layout_height="wrap_content"/>
+</LinearLayout>
