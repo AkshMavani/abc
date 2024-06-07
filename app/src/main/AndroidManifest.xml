@@ -30,6 +30,9 @@
         android:theme="@style/Theme.Delete"
         tools:targetApi="31">
         <activity
+            android:name=".image.MainActivity_Img"
+            android:exported="false" />
+        <activity
             android:name=".image.MainActivity_calener"
             android:exported="false" />
         <activity
@@ -54,7 +57,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".image.MainActivity_cal"
+            android:name=".image.Activity_blur"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
