@@ -65,16 +65,16 @@
             android:name=".image.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".sqlite.MainActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".pager.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".pager.MainActivity"
+            android:name=".sqlite.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

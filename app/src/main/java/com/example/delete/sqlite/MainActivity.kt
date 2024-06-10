@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         val intent=Intent(this,MyForegroundService::class.java)
         startService(intent)
-        val btn:Button=findViewById(R.id.button2)
 
     }
 

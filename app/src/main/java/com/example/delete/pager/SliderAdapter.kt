@@ -1,6 +1,8 @@
 package com.example.delete.pager
 
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +10,10 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.delete.R
+import com.example.delete.sqlite.interface_click
 
 
-class SliderAdapter internal constructor(sliderItems: List<slider>, viewPager2: ViewPager2) : RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
+class SliderAdapter internal constructor(sliderItems: List<slider>, viewPager2: ViewPager2,var context:Context,var click:interface_click) : RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
     private val sliderItems: List<slider>
     private val viewPager2: ViewPager2
 
@@ -28,7 +31,13 @@ class SliderAdapter internal constructor(sliderItems: List<slider>, viewPager2: 
 
     override fun onBindViewHolder(holder: SliderViewHolder, position: Int) {
         holder.setImage(sliderItems[position])
-
+        holder.itemView.setOnClickListener {
+            viewPager2.visibility=View.GONE
+            val sp=context.getSharedPreferences("SP",MODE_PRIVATE)
+            val edit=sp.edit()
+            edit.putInt("img",sliderItems[position].img).apply()
+            click.click_item(sliderItems[position].img)
+        }
     }
 
     override fun getItemCount(): Int {

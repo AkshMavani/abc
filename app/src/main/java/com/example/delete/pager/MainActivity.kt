@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.delete.R
 import com.example.delete.databinding.ActivityMain9Binding
+import com.example.delete.sqlite.interface_click
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,8 +25,13 @@ class MainActivity : AppCompatActivity() {
         sliderItems.add(slider(R.drawable.jk))
         sliderItems.add(slider(R.drawable.kl))
         sliderItems.add(slider(R.drawable.op))
+        val click=object : interface_click{
+            override fun click_item(s: Int) {
 
-       binding.pager.setAdapter(SliderAdapter(sliderItems, binding.pager))
+            }
+
+        }
+       binding.pager.setAdapter(SliderAdapter(sliderItems, binding.pager, context = this,click))
         binding.pager.setClipToPadding(false);
         binding.pager.setClipChildren(false);
         binding.pager.setOffscreenPageLimit(3);
