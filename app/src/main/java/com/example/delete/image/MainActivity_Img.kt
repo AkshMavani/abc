@@ -18,7 +18,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delete.R
 
@@ -82,10 +81,10 @@ class MainActivity_Img : AppCompatActivity() {
         arr.add(R.drawable.op)
         arr.add(R.drawable.qr)
         arr.add(R.drawable.rs)
-        val adapter=MyAdapter(arr,this)
-        val layoutManager = GridLayoutManager(this, 3)
-        rc.layoutManager=layoutManager
-        rc.adapter=adapter
+//        val adapter=MyAdapter(arr,this)
+//        val layoutManager = GridLayoutManager(this, 3)
+//        rc.layoutManager=layoutManager
+//        rc.adapter=adapter
         brn.setOnClickListener {
 
 
