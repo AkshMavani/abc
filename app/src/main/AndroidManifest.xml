@@ -38,6 +38,9 @@
         android:theme="@style/Theme.Delete"
         tools:targetApi="31">
         <activity
+            android:name=".abc.MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".sqlite.MainActivity"
             android:exported="false" />
         <activity
