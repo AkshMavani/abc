@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private val gson = Gson()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main13)
+        setContentView(R.layout.activit_main13)
         recyclerView = findViewById(R.id.recyclerView)
         val btnAdd: Button = findViewById(R.id.btnAdd)
         val obj=object : Click{
