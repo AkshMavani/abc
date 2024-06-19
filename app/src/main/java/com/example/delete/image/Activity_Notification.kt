@@ -27,6 +27,7 @@ class Activity_Notification : AppCompatActivity() {
            showCustomNotification(this)
         }
     }
+
     @SuppressLint("MissingPermission")
     fun showCustomNotification(context: Context) {
         val channelId = "custom_notification_channel"
