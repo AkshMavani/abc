@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delete.R
 import com.example.delete.playlist.Music
@@ -20,7 +21,7 @@ class MainActivity_listAll : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list_all)
         checkPermissions()
-
+        Log.e("TAG", "onCreate:>>check ", )
     }
     private fun checkPermissions() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -76,11 +77,12 @@ class MainActivity_listAll : AppCompatActivity() {
                 val audioFile = AudioFile(id, name, duration, data)
                 audioList.add(audioFile)
                 Log.e("TAG", "fetchAudioFiles:###$name ")
-
-
             }
         }
-
+        val rc=findViewById<RecyclerView>(R.id.rc)
+        rc.layoutManager=LinearLayoutManager(this)
+        val adapter=CustomAdapter(audioList)
+        rc.adapter=adapter
         // Do something with the audioList, e.g., display in RecyclerView
     }
 
