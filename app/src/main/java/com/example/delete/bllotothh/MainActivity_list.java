@@ -133,9 +133,13 @@ public class MainActivity_list extends AppCompatActivity {
                 Model2 bluetooth = new Model2();
                 bluetooth.name = device.getName();
                 bluetooth.address = device.getAddress();
+                int rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
+                bluetooth.rssi = rssi;
                 list.add(bluetooth);
+                double distance = calculateDistance(rssi);
                 adapter.notifyDataSetChanged();
                 Log.e("TAG123", "onReceive: " + device.getName());
+                Log.e("TAG123", "onReceive: " + distance);
             }
         }
     };
@@ -144,5 +148,9 @@ public class MainActivity_list extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(receiver);
+    }
+    private double calculateDistance(int rssi) {
+        int txPower = -59; // Default TX power value, you may need to adjust this value based on your environment and device
+        return Math.pow(10, (txPower - rssi) / 20.0);
     }
 }
