@@ -28,6 +28,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -39,6 +45,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Delete"
         tools:targetApi="31">
+        <activity
+            android:name=".bllotothh.Activity_Notification"
+            android:exported="false" />
+        <activity
+            android:name=".bllotothh.Activity_Notification2"
+            android:exported="false" />
+        <activity
+            android:name=".image.Activity_Notification"
+            android:exported="false" />
         <activity
             android:name=".bllotothh.MainActivity_listAll"
             android:exported="false" />
@@ -97,7 +112,7 @@
             android:name=".pager.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".image.Activity_Notification"
+            android:name=".bllotothh.MainActivity_list"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -129,6 +144,7 @@
             android:name=".sqlite.MyForegroundService"
             android:enabled="true"
             android:exported="true" />
+        <service android:name=".bllotothh.MusicService" android:foregroundServiceType="mediaPlayback" />
     </application>
 
 </manifest>
