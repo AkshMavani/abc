@@ -46,6 +46,9 @@
         android:theme="@style/Theme.Delete"
         tools:targetApi="31">
         <activity
+            android:name=".bllotothh.MainActivity_list"
+            android:exported="false" />
+        <activity
             android:name=".bllotothh.Activity_Notification"
             android:exported="false" />
         <activity
@@ -112,7 +115,7 @@
             android:name=".pager.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".bllotothh.MainActivity_list"
+            android:name=".hloo.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -144,7 +147,9 @@
             android:name=".sqlite.MyForegroundService"
             android:enabled="true"
             android:exported="true" />
-        <service android:name=".bllotothh.MusicService" android:foregroundServiceType="mediaPlayback" />
+        <service
+            android:name=".bllotothh.MusicService"
+            android:foregroundServiceType="mediaPlayback" />
     </application>
 
 </manifest>
