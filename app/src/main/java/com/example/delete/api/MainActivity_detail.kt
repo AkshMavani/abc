@@ -10,6 +10,7 @@ import com.example.delete.R
 
 class MainActivity_detail : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
+    val adapter:Adapter?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_detail)
@@ -36,6 +37,7 @@ class MainActivity_detail : AppCompatActivity() {
             }
         }
         imgview_heart.setOnClickListener {
+
             isHeartFilled = !isHeartFilled
             updateHeartIcon(isHeartFilled,imgview_heart)
 //

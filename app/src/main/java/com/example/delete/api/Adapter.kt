@@ -43,6 +43,8 @@ class Adapter(private val mList: List<Model_abc>,val context:Context) : Recycler
                     if (i.img==1){
                         holder.img_heart.visibility=View.VISIBLE
                         holder.img_heart.setImageResource(R.drawable.baseline_favorite_24)
+                    }else{
+                        holder.img_heart.visibility=View.GONE
                     }
 
                 }

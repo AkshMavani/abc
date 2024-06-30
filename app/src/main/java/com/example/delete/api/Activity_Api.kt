@@ -9,7 +9,7 @@ import com.example.delete.R
 
 
 class Activity_Api : AppCompatActivity() {
-    var viewModel= HomeViewModel()
+    var adapter:Adapter?=null
     var arr:ArrayList<Model_abc> = ArrayList()
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +28,9 @@ class Activity_Api : AppCompatActivity() {
         arr.add(Model_abc(R.drawable.mn,"mn"))
         arr.add(Model_abc(R.drawable.op,"op"))
 
-                val adapter=Adapter(arr,this)
+                adapter=Adapter(arr,this)
                 recyclerView.adapter=adapter
+                adapter!!.notifyDataSetChanged()
 
 //        viewModel.onTopCoinsPairListAPICall()
 //        viewModel.mutImageAPIResponse.observe(this, Observer {
@@ -89,4 +90,9 @@ class Activity_Api : AppCompatActivity() {
 //        editor.apply()
 //        Toast.makeText(this, "Saved Array List to Shared preferences. ", Toast.LENGTH_SHORT).show()
 //    }
+    override fun onResume() {
+    adapter?.notifyDataSetChanged()
+        super.onResume()
+
+    }
 }
