@@ -34,6 +34,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -41,10 +42,21 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Delete"
         tools:targetApi="31">
+        <activity
+            android:name=".api.MainActivity_detail"
+            android:exported="false" />
+        <activity
+            android:name=".hloo.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".hloo.MainActivity2"
+            android:exported="false" />
         <activity
             android:name=".bllotothh.MainActivity_list"
             android:exported="false" />
@@ -115,7 +127,7 @@
             android:name=".pager.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".hloo.MainActivity"
+            android:name=".api.Activity_Api"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

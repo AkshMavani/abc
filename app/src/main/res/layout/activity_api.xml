@@ -3,13 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/parent_layout"
     android:layout_height="match_parent"
-    tools:context=".hloo.MainActivity">
+    tools:context=".api.Activity_Api">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:id="@+id/rc"
+        android:id="@+id/rc1"
         android:layout_height="match_parent"/>
-
 </LinearLayout>
