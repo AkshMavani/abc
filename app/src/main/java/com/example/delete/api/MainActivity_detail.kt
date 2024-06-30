@@ -20,6 +20,8 @@ class MainActivity_detail : AppCompatActivity() {
         val imgview_heart=findViewById<ImageView>(R.id.imageView_heart)
         imgview.setImageResource(img)
         Log.e("TAG", "nme:$nme ", )
+
+
         var isHeartFilled = false
         val db=DBHandler(this)
         val a=  db.readCourses()
@@ -37,11 +39,8 @@ class MainActivity_detail : AppCompatActivity() {
             }
         }
         imgview_heart.setOnClickListener {
-
             isHeartFilled = !isHeartFilled
             updateHeartIcon(isHeartFilled,imgview_heart)
-//
-//
            val a= db.heartStateExists(nme.toString())
             Log.e("TAG", "onCreate:>>>>>>>>>>$a ", )
             if (a){
@@ -50,7 +49,6 @@ class MainActivity_detail : AppCompatActivity() {
                 db.addNewCourse(isHeartFilled,nme.toString())
             }
         }
-
     }
     private fun updateHeartIcon(isFilled: Boolean,img:ImageView) {
         if (isFilled) {
