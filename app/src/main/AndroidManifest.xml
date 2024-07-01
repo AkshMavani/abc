@@ -49,6 +49,9 @@
         android:theme="@style/Theme.Delete"
         tools:targetApi="31">
         <activity
+            android:name=".api.MainActivity_refresh"
+            android:exported="false" />
+        <activity
             android:name=".api.Activity_Api"
             android:exported="false" />
         <activity
@@ -130,7 +133,7 @@
             android:name=".pager.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".api.MainActivity_refresh"
+            android:name=".bottombar.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
